@@ -1,0 +1,463 @@
+/*GLOBAL CSS STARTS HERE*/
+
+:root {
+    --rock: 'Rock 3D', cursive;
+    --mono: 'Space Mono', monospace;
+    --orange: linear-gradient(180deg, #FF512F 10%, #FF512F 50%, #DD2476 90%);
+    --light: #fff;
+    --dark: #000;
+}
+
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    cursor: default;
+    mix-blend-mode: lighten;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+}
+
+a,
+a:hover {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.banner .container {
+    max-width: 1470px;
+}
+
+ul,
+ol {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+/* .site {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+} */
+
+h2 {
+    font-size: 60px;
+    font-weight: bold;
+    color: var(--light);
+    line-height: 66px;
+    font-family: var(--rock);
+    text-transform: uppercase;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+h3 {
+    font-size: 45px;
+    font-weight: bold;
+    color: var(--light);
+    line-height: 50px;
+    font-family: var(--mono);
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+p {
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: bold;
+    color: var(--light);
+    font-family: var(--mono);
+    margin-bottom: 25px;
+}
+
+figure {
+    margin: 0;
+}
+
+.btn {
+    background: var(--light);
+    font-size: 18px;
+    color: var(--dark);
+    font-family: var(--mono);
+    text-transform: uppercase;
+    padding: 10px 30px;
+    border-radius: 5px;
+}
+
+.scroll-btn {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.scroll-btn svg {
+    max-height: 90vh;
+    width: 100%;
+    height: 100%;
+}
+
+body.hidden {
+    overflow: hidden;
+}
+
+body::-webkit-scrollbar {
+    width: 0;
+}
+
+
+/* body::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
+} */
+
+
+/*GLOBAL CSS ENDS HERE*/
+
+
+/* header css starts here */
+
+header {
+    padding: 55px 0;
+    background-color: transparent;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    transition: 0.5s;
+}
+
+header .header-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo a {
+    font-size: 24px;
+    color: var(--light);
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: var(--rock);
+}
+
+header nav {
+    max-width: 550px;
+    width: 100%;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 550px;
+    width: 100%;
+}
+
+header nav ul a {
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 28px;
+    color: var(--light);
+    font-family: var(--mono);
+    transition: 0.4s;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 1);
+}
+
+header nav ul a:hover {
+    color: var(--dark);
+    text-shadow: 2px 2px 5px rgba(255, 255, 255, 1);
+}
+
+.logo img {
+    width: 100%;
+}
+
+header .menu-btn {
+    width: 40px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-direction: column;
+}
+
+header .menu-btn span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    border-radius: 5px;
+    background-color: var(--light);
+}
+
+
+/* header css ends here */
+
+
+/* menu css start here */
+
+menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+
+header #menu-toggle {
+    width: 40px;
+    height: 60px;
+    position: relative;
+    cursor: pointer;
+    border-radius: 5px;
+    z-index: 1;
+}
+
+header #menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    border-radius: 5px;
+    background-color: var(--light);
+    transition: 0.25s ease-in-out;
+}
+
+header #menu-toggle #hamburger {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+header #menu-toggle #hamburger span {
+    width: 40px;
+    height: 4px;
+    position: relative;
+    top: 0;
+    left: 0;
+    margin: 10px 0;
+}
+
+header #menu-toggle #hamburger span:nth-child(1) {
+    transition-delay: 0.5s;
+}
+
+header #menu-toggle #hamburger span:nth-child(2) {
+    transition-delay: 0.625s;
+}
+
+header #menu-toggle #hamburger span:nth-child(3) {
+    transition-delay: 0.75s;
+}
+
+header #menu-toggle #cross {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    top: 0;
+    left: 0;
+    transition-delay: 0s;
+    transform: rotate(45deg);
+}
+
+header #menu-toggle #cross span:nth-child(1) {
+    height: 0;
+    width: 4px;
+    position: absolute;
+    top: 3px;
+    left: 40%;
+    transform: translateX(-50%);
+    transition-delay: 0s;
+}
+
+header #menu-toggle #cross span:nth-child(2) {
+    width: 0%;
+    height: 4px;
+    position: absolute;
+    left: -8px;
+    top: 45%;
+    transform: translateY(-50%);
+    transition-delay: 0.25s;
+}
+
+header #menu-toggle.open #hamburger span {
+    width: 0%;
+}
+
+header #menu-toggle.open #hamburger span:nth-child(1) {
+    transition-delay: 0s;
+}
+
+header #menu-toggle.open #hamburger span:nth-child(2) {
+    transition-delay: 0.125s;
+}
+
+header #menu-toggle.open #hamburger span:nth-child(3) {
+    transition-delay: 0.25s;
+}
+
+header #menu-toggle.open #cross span:nth-child(1) {
+    height: 50px;
+    transition-delay: 0.625s;
+}
+
+header #menu-toggle.open #cross span:nth-child(2) {
+    width: 50px;
+    transition-delay: 0.375s;
+}
+
+
+/* menu css end here */
+
+
+/* banner css starts here */
+
+.banner {
+    background-color: transparent;
+    padding: 300px 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner h1 {
+    text-align: center;
+}
+
+.banner h1 span {
+    font-size: 9.5vw;
+    line-height: 11vw;
+    text-align: center;
+    font-weight: 400;
+    font-family: var(--rock);
+    color: var(--light);
+    display: inline-block;
+    background: -webkit-linear-gradient(left, orange, yellow, green, cyan, blue, violet);
+    background: -o-linear-gradient(right, orange, yellow, green, cyan, blue, violet);
+    background: -moz-linear-gradient(right, orange, yellow, green, cyan, blue, violet);
+    background: linear-gradient(to right, orange, yellow, green, cyan, blue, violet);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* banner ends here */
+
+#nav-container {
+    margin-left: auto;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 1;
+}
+
+#nav-overlay {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    z-index: -1;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 50%;
+    transition: 1s;
+    transform: scale3d(0, 0, 0);
+}
+
+#nav-overlay.open {
+    transform: scale3d(1, 1, 1);
+}
+
+#nav-fullscreen {
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    transition: ease-in-out 0.25s;
+    transition-delay: 0s;
+    visibility: hidden;
+    opacity: 0;
+}
+
+#nav-fullscreen ul {
+    list-style: none;
+}
+
+#nav-fullscreen a {
+    color: white;
+    text-decoration: none;
+}
+
+#nav-fullscreen.open {
+    visibility: visible;
+    opacity: 1;
+    transition: ease-in-out 0.5s;
+    transition-delay: 0.25s;
+}
+
+#nav-overlay {
+    background: var(--orange);
+}
+
+#nav-fullscreen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: sans-serif;
+    font-size: 10vh;
+}
+
+#nav-fullscreen li:hover {
+    list-style: disc;
+}
+
+
+/* about css start here */
+
+.about .about-detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+
+.about .about-detail figure {
+    width: 500px;
+    height: 500px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+}
+
+.about .about-detail .col-right {
+    max-width: 700px;
+}
+
+
+/* about css end here */
